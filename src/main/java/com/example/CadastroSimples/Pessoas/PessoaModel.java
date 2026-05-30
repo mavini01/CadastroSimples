@@ -2,11 +2,17 @@ package com.example.CadastroSimples.Pessoas;
 
 import com.example.CadastroSimples.Hobbies.HobbiesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "pessoa_cadastro")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,37 +25,5 @@ public class PessoaModel {
     @JoinColumn(name = "hobbies_id") // chave estrageira
     private HobbiesModel hobbie;
     private List<HobbiesModel> hobbies;
-    public PessoaModel() {
-    }
 
-    public PessoaModel(String dataNascimento, int idade, String nome) {
-        this.dataNascimento = dataNascimento;
-        this.idade = idade;
-        this.nome = nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
 }
