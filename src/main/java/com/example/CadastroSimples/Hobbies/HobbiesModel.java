@@ -17,8 +17,8 @@ public class HobbiesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String hobbie;
-    private PessoaModel pessoa;
 
     @OneToMany(mappedBy = "hobbie") // um hobbie pode ter varias pessoas
     private List<PessoaModel> pessoas;
