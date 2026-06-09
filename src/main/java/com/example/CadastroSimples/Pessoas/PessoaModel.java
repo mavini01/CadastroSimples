@@ -18,11 +18,13 @@ public class PessoaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "coluna Name")
     private String nome;
 
     private int idade;
 
     private String dataNascimento;
+
     // @ManyToOne uma pessoa tem apenas um hoobie
     @ManyToOne
     @JoinColumn(name = "hobbies_id") // chave estrageira
